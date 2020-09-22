@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Position] (
+    [ID]   INT            IDENTITY (1, 1) NOT FOR REPLICATION NOT NULL,
+    [Name] NVARCHAR (100) NOT NULL,
+    CONSTRAINT [PK_Position] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [UIX_Position]
+    ON [dbo].[Position]([Name] ASC);
+
